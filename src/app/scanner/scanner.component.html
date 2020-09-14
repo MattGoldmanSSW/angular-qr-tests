@@ -1,0 +1,46 @@
+<button mat-raised-button color="primary" (click)="toggleQRScanner()">Scan a QR Code</button>
+
+<span *ngIf="isScanning">
+  <mat-card class="scan-card">
+    <mat-card-title>Scanning</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Select a camera device</mat-label>
+        <mat-select matNativeControl matInput (selectionChange)="deviceSelected($event.value)">
+          <mat-option value="">No Device Selected</mat-option>
+          <mat-option *ngFor="let device of availableDevices" [value]="device.deviceId">{{device.label}}</mat-option>
+          <!-- <option *ngFor="let device of availableDevices" [value]="device.deviceId"
+            [selected]="currentDevice && device.deviceId === currentDevice.deviceId">{{device.label}}</option> -->
+        </mat-select>
+      </mat-form-field>
+      <zxing-scanner (scanSuccess)="onReceiveQRCode($event)"
+                    (scanError)="onScanError($event)"
+                    (camerasFound)="onCamerasFound($event)"
+                    [(device)]="currentDevice"
+                    ></zxing-scanner>
+    </mat-card-content>
+  </mat-card>
+</span>
+
+<span *ngIf="gotRestuls">
+  <mat-card>
+    <mat-card-title>
+      Got a QR Code Result!
+    </mat-card-title>
+    <mat-card-content>
+      <p>{{ resultString }}</p>
+      <p><button mat-raised-button (click)="clearQRResults()">Clear results</button></p>
+    </mat-card-content>
+  </mat-card>
+</span>
+
+<span *ngIf="gotError">
+  <mat-card>
+    <mat-card-title>
+      Error scanning code
+    </mat-card-title>
+    <mat-card-content>
+      <p>{{ errorString }}</p>
+    </mat-card-content>
+  </mat-card>
+</span>

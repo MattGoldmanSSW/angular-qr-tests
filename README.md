@@ -1,10 +1,16 @@
 # QRTests
 
-This project was created for testing the [zxing/ngx-scanner](https://www.npmjs.com/package/@zxing/ngx-scanner) library in an Angular application.
+This project was created for testing the [zxing/ngx-scanner](https://www.npmjs.com/package/@zxing/ngx-scanner) and [ng-recaptcha](https://www.npmjs.com/package/ng-recaptcha) libraries in an Angular application.
 
 As it requires access to the camera, HTTPS must be used (even for testing locally), as your browser will block access to the getUserMedia() call without it.
 
 An SSL cert and key are included in the repo (even though they shouldn't be) so you can trust this cert if you don't have one or want to generate your own.
+
+
+
+## Demo
+
+A demo is available [here](https://goldieplaygroundstorage.z8.web.core.windows.net/) **Note**: This is a temporary playground and the demo may note be persisted.
 
 ## Development server
 

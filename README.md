@@ -12,7 +12,9 @@ An SSL cert and key are included in the repo (even though they shouldn't be) so 
 
 A demo is available [here](https://goldieplaygroundstorage.z8.web.core.windows.net/) 
 
-**Note**: This is a temporary playground and the demo may not be persisted.
+**Note 1**: This is a temporary playground and the demo may not be persisted.
+
+**Note 2**: If using this on an iOS device, you *must* use Safari. Apple do not allow access to the camera from any other devices.
 
 ## Development server
 

@@ -10,7 +10,9 @@ An SSL cert and key are included in the repo (even though they shouldn't be) so 
 
 ## Demo
 
-A demo is available [here](https://goldieplaygroundstorage.z8.web.core.windows.net/) **Note**: This is a temporary playground and the demo may note be persisted.
+A demo is available [here](https://goldieplaygroundstorage.z8.web.core.windows.net/) 
+
+**Note**: This is a temporary playground and the demo may not be persisted.
 
 ## Development server
 

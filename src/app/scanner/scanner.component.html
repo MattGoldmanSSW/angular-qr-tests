@@ -1,4 +1,7 @@
-<button mat-raised-button color="primary" (click)="toggleQRScanner()">Scan a QR Code</button>
+<button mat-raised-button
+        color="primary"
+        (click)="toggleQRScanner()"
+        [disabled]="!buttonEnabled">Scan a QR Code</button>
 
 <span *ngIf="isScanning">
   <mat-card class="scan-card">
@@ -44,3 +47,5 @@
     </mat-card-content>
   </mat-card>
 </span>
+
+<qrtests-captcha (captchaSolved)="onCaptchaResultReceived($event)"></qrtests-captcha>
